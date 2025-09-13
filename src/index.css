@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+@layer base {
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+ 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+  }
+    p {
+    font-family: "Inter", sans-serif;
+    line-height: 1.75; /* readability ke liye */
+  }
+}
+  
+
+
+@keyframes text-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-text {
+  background-size: 200% 200%;
+  animation: text-gradient 6s ease infinite;
+}
+html {
+  scroll-behavior: smooth;
+}
