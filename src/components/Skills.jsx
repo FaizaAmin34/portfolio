@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper"; 
 
 export default function Skills() {
-
   const skills = [
     { name: "HTML", level: 95 },
     { name: "CSS", level: 90 },
@@ -19,7 +19,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 sm:py-20 bg-gray-900/40">
+    <SectionWrapper id="skills" className="bg-gray-900/40">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function Skills() {
         Skills
       </motion.h2>
 
-      <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -56,13 +56,12 @@ export default function Skills() {
         ))}
       </div>
 
-   
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
         viewport={{ once: true }}
-        className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 sm:mt-12 px-4 sm:px-6"
+        className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 sm:mt-12"
       >
         {[
           "React",
@@ -81,6 +80,6 @@ export default function Skills() {
           </span>
         ))}
       </motion.div>
-    </section>
+    </SectionWrapper>
   );
 }

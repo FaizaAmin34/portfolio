@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, FileText, Presentation, Camera, Video, Image } from "lucide-react";
-
+import SectionWrapper from "./SectionWrapper"; 
 
 export default function About() {
   const skills = [
@@ -36,7 +36,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 bg-gray-900/50">
+    <SectionWrapper id="about" className="bg-gray-900/50">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -47,17 +47,16 @@ export default function About() {
         About Me
       </motion.h2>
 
-  
-      <div className="max-w-3xl sm:max-w-4xl mx-auto text-center mb-10 sm:mb-12 px-4">
-        
+    
+      <div className="max-w-3xl sm:max-w-4xl mx-auto text-center mb-10 sm:mb-12">
         <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
           Hi, I’m <span className="text-indigo-400 font-semibold">Faiza</span>, a passionate Front-End Developer and creative designer.
           I enjoy crafting modern, responsive, and user-friendly websites, while also exploring design, video editing, and photography. My goal is to turn ideas into beautiful and interactive experiences.
         </p>
       </div>
 
-      
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4 sm:px-0">
+     
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -73,7 +72,8 @@ export default function About() {
         ))}
       </div>
 
-      <div className="max-w-xl sm:max-w-2xl mx-auto relative border-l border-gray-700 pl-4 sm:pl-6 space-y-6 sm:space-y-8 px-4 sm:px-0">
+      
+      <div className="max-w-xl sm:max-w-2xl mx-auto relative border-l border-gray-700 pl-4 sm:pl-6 space-y-6 sm:space-y-8">
         {timeline.map((item, index) => (
           <motion.div
             key={index}
@@ -85,10 +85,12 @@ export default function About() {
           >
             <div className="absolute -left-3 w-3 h-3 rounded-full bg-indigo-400 top-1 sm:top-2"></div>
             <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-100">{item.title}</h3>
-            <span className="text-xs sm:text-sm text-gray-400 block">{item.place} • {item.year}</span>
+            <span className="text-xs sm:text-sm text-gray-400 block">
+              {item.place} • {item.year}
+            </span>
           </motion.div>
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
+import SectionWrapper from "./SectionWrapper"; 
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState("");
@@ -36,7 +37,7 @@ export default function Contact() {
   }, [formStatus]);
 
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-gray-900/50">
+    <SectionWrapper  id="contact" className="bg-gray-900 py-12">  
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +49,7 @@ export default function Contact() {
       </motion.h2>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 px-4 sm:px-6">
-        {/* Contact Form */}
+      
         <motion.form
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +99,7 @@ export default function Contact() {
           )}
         </motion.form>
 
-        {/* Social Links */}
+      
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -131,6 +132,6 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
